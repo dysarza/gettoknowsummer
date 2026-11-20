@@ -1,0 +1,229 @@
+/* general style for webpage */
+
+* { box-sizing: border-box; }
+
+body 
+{
+	background-color: #FEF7DE;
+	margin: 0;
+}
+
+/* style for header */
+header
+{
+	background-color: #48222E;
+	text-align: center;
+	padding: 20px;
+	border-bottom: 10px solid #8C2F4F;
+
+	h1 { color: #C0D6ED; font-family: "Instrument Serif", serif; font-size: 3rem; font-weight: 200; font-style: italic; }
+}
+
+/* default style for paragraphs and lists */
+p, ul
+{
+	color: #FFFFFF;
+	font-family: Raleway, sans-serif;
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+/* default style for section headers */
+h2
+{
+	color: #1A3A5B;
+	font-family: "Instrument Serif", serif;
+	font-size: 2.5rem;
+	font-weight: 200;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+/* style for navigation bar */
+nav
+{
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	
+	ul
+	{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		background-color: #2B1218;
+		display: flex;
+		
+        li a
+        {
+            display: block;
+            color: #FFFFFF;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover
+        {
+            background-color: #111111;
+        }
+	}
+}
+
+/* adds margin for scrolling to a specific section */
+section
+{
+	scroll-margin-top: 110px;
+}
+
+/* arranges profile photo and About Me text horizontally */
+#aboutme 
+{
+	padding: 60px 5%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+
+	div { flex: 0 1 550px; }
+	p { color: #48222E; text-align: justify; line-height: 1.5; max-width: 600px; }
+	img { width: 100%; max-width: 500px; height: auto; }
+}
+
+/* styles and arranges Things I Love, Passion Projects, and Contact */
+#experience
+{
+	padding: 10px 15%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	gap: 30px;
+	margin-bottom: 50px;
+
+	h2 { color: #C0D6ED; }
+}
+
+/* styles Things I Love section */
+#thingsilove
+{
+	background-color: #6F3447;
+	border-radius: 10px;
+	box-shadow: 10px 10px #48222E;
+	padding: 30px;
+	flex: 0 1 30%;
+	min-width: 0;
+	display: flex;
+    flex-direction: column;
+
+	img
+	{ 
+		display: block;
+        width: 150%;
+        max-width: none;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: -10px;
+        align-self: center;
+	}
+}
+
+/* styles Passion Projects section and its images */
+#passionprojects
+{
+	background-color: #6F3447;
+	border-radius: 10px;
+	box-shadow: 10px 10px #48222E;
+	padding: 30px;
+	flex: 1;
+	min-width: 0;
+
+	img
+	{ 
+		margin-right: 15px;
+		max-width: 20%;
+		height: auto;
+	}
+}
+
+/* styles Contact section and its links */
+#contact
+{
+	width: 90%;
+    margin: 30px auto;
+	
+	h2, p
+	{
+		text-align: center;
+		line-height: 1.5;
+		max-width: 600px;
+		margin: auto;
+	}
+	
+	i
+	{
+		color: #48222E;
+		font-size: 1.8rem;
+		margin: 0 10px;
+	}
+}
+
+/* style for footer */
+footer
+{
+	background-color: #48222E;
+	text-align: right;
+	padding: 20px 50px;
+	border-top: 10px solid #8C2F4F;
+	margin-top: 40px;
+}
+
+/* adjusts webpage layout for smaller screens */
+@media (max-width: 600px)
+{
+	header h1 { font-size: 2rem; }
+	p, ul { font-size: 1rem; }
+	h2 { font-size: 1.5rem; }
+	
+	nav ul
+	{
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+
+		li a
+		{
+			padding: 10px;
+			font-size: 0.875rem;
+		}
+	}
+	
+	#aboutme
+	{
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		gap: 10px;
+
+		div { flex: 0 1 auto; width: 100%; }
+		p { margin-bottom: 0; line-height: 1.4; }
+		img { max-width: 100%; }
+	}
+
+	#experience { flex-direction: column; padding: 20px 20px; margin-bottom: 0; }
+	#thingsilove, #passionprojects
+	{
+		width: 100%;
+		
+		img
+		{
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			margin-right: 0;
+		}
+	}
+
+	#contact { padding: 20px 10px; margin-top: 10px; }
+	footer { text-align: center; padding: 20px; margin-top: 10px; }
+}
+
